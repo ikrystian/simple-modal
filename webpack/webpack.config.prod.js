@@ -37,7 +37,7 @@ module.exports = merge(common, {
       },
       {
         test: /\.s?css/i,
-        use: ExtractSASS.extract(['css-loader?sourceMap=true&minimize=true', 'sass-loader'])
+        use: ExtractSASS.extract(['css-loader?sourceMap=true&minimize=false', 'sass-loader'])
       }
     ]
   }

@@ -1,12 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>webpack starterkit</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>pro modal</title>
+    <link rel="stylesheet" href="../dist/styles/bundle.css">
 </head>
 <body>
 
-<h1>yet another webpack starterkit!!11!</h1>
+<button onclick="openModal()" class="button">open modal</button>
 
+
+<div class="overlay" id="overlay">
+
+    <section class="modal">
+        <h4 class="modal__title">Choose users or groups</h4>
+
+        <div class="modal__content">
+
+            <div class="modal__section modal__section--unselected">
+
+                <div class="modal__search">
+
+                    <span class="modal__search-icon">
+                      <img src="/public/images/baseline-search-24px.svg" alt="">
+                    </span>
+
+                    <input type="text" placeholder="Search users or groups...">
+
+                    <button class="modal__search-button modal__search-button--active" title="Search users">
+                        <img src="/public/images/baseline-person-24px.svg" alt="">
+                    </button>
+
+                    <button class="modal__search-button">
+                        <img src="/public/images/baseline-group-24px.svg" alt=""  title="Search groups">
+                    </button>
+                </div>
+
+                <div class="modal__scroll modal__scroll--left">
+
+                    <a title="Add group" class="list-item">
+                        <div class="list-item__group">
+                            <img src="/public/images/baseline-contacts-24px.svg" alt="">
+                        </div>
+                        <div class="list-item__data">
+                            <h6 class="list-item__title">Awesome group</h6>
+                            <span class="list-item__subtitle">162 users</span>
+                        </div>
+                    </a>
+
+                    <a title="Add user" class="list-item">
+                        <div class="list-item__image">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                        </div>
+                        <div class="list-item__data">
+                            <h6 class="list-item__title">John Doe</h6>
+                        </div>
+                    </a>
+
+                    <a title="Add user" class="list-item">
+                        <div class="list-item__image">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+                        </div>
+                        <div class="list-item__data">
+                            <h6 class="list-item__title">Mary Smith</h6>
+                        </div>
+                    </a>
+
+                    <a title="Add user" class="list-item">
+                        <div class="list-item__image">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="">
+                        </div>
+                        <div class="list-item__data">
+                            <h6 class="list-item__title">Patricia Jones</h6>
+                        </div>
+                    </a>
+
+                    <a title="Add user" class="list-item">
+                        <div class="list-item__image">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="">
+                        </div>
+                        <div class="list-item__data">
+                            <h6 class="list-item__title">Jennifer Williams</h6>
+                        </div>
+                    </a>
+
+                    <a title="Add user" class="list-item">
+                        <div class="list-item__image">
+                            <img src="https://randomuser.me/api/portraits/men/43.jpg" alt="">
+                        </div>
+                        <div class="list-item__data">
+                            <h6 class="list-item__title">James Taylor</h6>
+                        </div>
+                    </a>
+
+                    <a title="Add user" class="list-item">
+                        <div class="list-item__image">
+                            <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="">
+                        </div>
+                        <div class="list-item__data">
+                            <h6 class="list-item__title">Robert Davies</h6>
+                        </div>
+                    </a>
+
+                    <a title="Add user" class="list-item">
+                        <div class="list-item__image">
+                            <img src="https://randomuser.me/api/portraits/men/97.jpg" alt="">
+                        </div>
+                        <div class="list-item__data">
+                            <h6 class="list-item__title">Michael Brown</h6>
+                        </div>
+                    </a>
+
+                    <a title="Add user" class="list-item">
+                        <div class="list-item__image">
+                            <img src="https://randomuser.me/api/portraits/women/26.jpg" alt="">
+                        </div>
+                        <div class="list-item__data">
+                            <h6 class="list-item__title">Linda Wilson</h6>
+                        </div>
+                    </a>
+
+                    <a title="Add user" class="list-item">
+                        <div class="list-item__image">
+                            <img src="https://randomuser.me/api/portraits/women/17.jpg" alt="">
+                        </div>
+                        <div class="list-item__data">
+                            <h6 class="list-item__title">Elizabeth Evans</h6>
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+            <!-- empty area - additional class modal__section--empty and tag p with info-->
+            <!--<div class="modal__section modal__section&#45;&#45;selected modal__section&#45;&#45;empty">-->
+            <!--<p>Selected users will appear here</p>-->
+            <!--</div>-->
+
+            <div class="modal__section modal__section--selected">
+
+                <div class="modal__scroll">
+
+                    <div class="list-item list-item--selected">
+                        <div class="list-item__group">
+                            <img src="/public/images/baseline-contacts-24px.svg" alt="">
+                        </div>
+                        <div class="list-item__data">
+                            <h6 class="list-item__title">Less awesome group</h6>
+                            <span class="list-item__subtitle">1 user</span>
+                        </div>
+                        <button title="Remove group" class="list-item__button">
+                            <img src="/public/images/baseline-delete-24px.svg" alt="">
+                        </button>
+                    </div>
+
+                    <div class="list-item list-item--selected">
+
+
+                        <div class="list-item__image">
+                            <img src="https://randomuser.me/api/portraits/women/47.jpg" alt="">
+                        </div>
+                        <div class="list-item__data">
+                            <h6 class="list-item__title">Barbara Thomas</h6>
+                        </div>
+                        <button title="Remove user" class="list-item__button">
+                            <img src="/public/images/baseline-delete-24px.svg" alt="">
+                        </button>
+                    </div>
+
+                    <div class="list-item list-item--selected">
+                        <div class="list-item__image">
+                            <img src="https://randomuser.me/api/portraits/men/61.jpg" alt="">
+                        </div>
+                        <div class="list-item__data">
+                            <h6 class="list-item__title">William Johnson</h6>
+                        </div>
+                        <button title="Remove user" class="list-item__button">
+                            <img src="/public/images/baseline-delete-24px.svg" alt="">
+                        </button>
+                    </div>
+
+                    <div class="list-item list-item--selected">
+                        <div class="list-item__image">
+                            <img src="https://randomuser.me/api/portraits/men/86.jpg" alt="">
+                        </div>
+                        <div class="list-item__data">
+                            <h6 class="list-item__title">David Roberts</h6>
+                        </div>
+                        <button title="Remove user" class="list-item__button">
+                            <img src="/public/images/baseline-delete-24px.svg" alt="">
+                        </button>
+                    </div>
+
+                    <div class="list-item list-item--selected">
+                        <div class="list-item__image">
+                            <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="">
+                        </div>
+                        <div class="list-item__data">
+                            <h6 class="list-item__title">Susan Walker</h6>
+                        </div>
+                        <button title="Remove user" class="list-item__button">
+                            <img src="/public/images/baseline-delete-24px.svg" alt="">
+                        </button>
+                    </div>
+
+                    <div class="list-item list-item--selected">
+                        <div class="list-item__image">
+                            <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="">
+                        </div>
+                        <div class="list-item__data">
+                            <h6 class="list-item__title">Jessica Wright</h6>
+                        </div>
+                        <button title="Remove user" class="list-item__button">
+                            <img src="/public/images/baseline-delete-24px.svg" alt="">
+                        </button>
+                    </div>
+
+                    <div class="list-item list-item--selected">
+                        <div class="list-item__image">
+                            <img src="https://randomuser.me/api/portraits/men/35.jpg" alt="">
+                        </div>
+                        <div class="list-item__data">
+                            <h6 class="list-item__title">Richard Robinson</h6>
+                        </div>
+                        <button title="Remove user" class="list-item__button">
+                            <img src="/public/images/baseline-delete-24px.svg" alt="">
+                        </button>
+                    </div>
+
+                    <div class="list-item list-item--selected">
+                        <div class="list-item__image">
+                            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="">
+                        </div>
+                        <div class="list-item__data">
+                            <h6 class="list-item__title">Joseph Thompson</h6>
+                        </div>
+                        <button title="Remove user" class="list-item__button">
+                            <img src="/public/images/baseline-delete-24px.svg" alt="">
+                        </button>
+                    </div>
+
+                    <div class="list-item list-item--selected">
+                        <div class="list-item__image">
+                            <img src="https://randomuser.me/api/portraits/men/78.jpg" alt="">
+                        </div>
+                        <div class="list-item__data">
+                            <h6 class="list-item__title">Thomas White</h6>
+                        </div>
+                        <button title="Remove user" class="list-item__button">
+                            <img src="/public/images/baseline-delete-24px.svg" alt="">
+                        </button>
+                    </div>
+
+                    <div class="list-item list-item--selected">
+                        <div class="list-item__image">
+                            <img src="https://randomuser.me/api/portraits/women/8.jpg" alt="">
+                        </div>
+                        <div class="list-item__data">
+                            <h6 class="list-item__title">Sarah Hughes</h6>
+                        </div>
+                        <button title="Remove user" class="list-item__button">
+                            <img src="/public/images/baseline-delete-24px.svg" alt="">
+                        </button>
+                    </div>
+
+                    <div class="list-item list-item--selected">
+                        <div class="list-item__image">
+                            <img src="https://randomuser.me/api/portraits/men/36.jpg" alt="">
+                        </div>
+                        <div class="list-item__data">
+                            <h6 class="list-item__title">Christopher Edwards</h6>
+                        </div>
+                        <button title="Remove user" class="list-item__button">
+                            <img src="/public/images/baseline-delete-24px.svg" alt="">
+                        </button>
+                    </div>
+
+                    <div class="list-item list-item--selected">
+                        <div class="list-item__image">
+                            <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="">
+                        </div>
+                        <div class="list-item__data">
+                            <h6 class="list-item__title">Daniel Green</h6>
+                        </div>
+                        <button title="Remove user" class="list-item__button">
+                            <img src="/public/images/baseline-delete-24px.svg" alt="">
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="modal__footer">
+            <button class="modal__button modal__button--secondary" onclick="closeModal()">Cancel</button>
+            <button class="modal__button modal__button--primary" onclick="closeModal()">Add users</button>
+        </footer>
+    </section>
+
+</div>
+
+<script>
+    function openModal() {
+        document.getElementById('overlay').style.display = 'flex';
+    }
+
+    function closeModal() {
+        document.getElementById('overlay').style.display = 'none';
+    }
+</script>
 </body>
 </html>
